@@ -1,3 +1,5 @@
+<img width="1500" height="750" alt="2" src="https://github.com/user-attachments/assets/eb89fca8-eb20-41a7-a977-acf259184378" />
+
 # Sharley Humanoid
 ### Introduction
 Everything that is automated have its mind, we call it Motherboard. This is the code of Sharley's Motherboards which uses Wi-Fi and Web Server to intract with the controller or the other motherboard.
@@ -55,4 +57,40 @@ The below given angles are the angles of rotation of Servo Motors:
 - LEFT: 30 degrees
 - RIGHT: 150 degrees
 
+### SETUP
 
+CLONE/DOWNLOAD this source code and follow these steps to setup your motherboard!
+
+**STEP 1: PORTS SETUP**
+Ports are listed above along with servo motors, DO check them and setup your physical part according to them, any mistake can cause errors in real working!
+
+**STEP 2: SETTING UP ARDUINO IDE (IF YOU ARE USING QtPi's Veda V3.0 ESP32)**
+- Click on `File` tab on tab bar.
+- Choose `Preferences` option.
+- In **Additional boards manager URLs**, paste this: `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`.
+- Click `OK`
+
+**STEP 3: SETTING UP SLAVE**
+- Open SlaveCode Folder and look for `SlaveCode.ino` file in it.
+- Open `SlaveCode.ino` file.
+- Look for `SSID` CONST and enter your WiFi's SSID and `Password` CONST and enter your WiFi's Password.
+- Upload the code to Motherboard 2 **(NOTE: UPLOADING CODE WILL ERASE ALL THE CODE IN THE MOTHERBOARD WHICH WILL RESULT IN NO-CONNECTION WITH QtPi OR CODE2PLAY)**
+- You will obtain a IP Address (If connection successful with WiFi) in Serial Monitor on `115200`, Copy that IP, DON'T POWER OFF THE MOTHERBOARD.
+
+**STEP 4: SETTING UP MASTER**
+- Open MasterCode folder and look for `MasterCode.ino` file in it.
+- Open `MasterCode.ino` file.
+- Look for `SSID` CONST and enter your WiFi's SSID as its value and look for `Password` CONST and enter your WiFi's Password as its value.
+- Look for `slaveIP` CONST and enter your Motherboard's IP that we optained in Step 3 as its value.
+- Upload the code to Motherboard 1 **(NOTE: UPLOADING CODE WILL ERASE ALL THE CODE IN THE MOTHERBOARD WHICH WILL RESULT IN NO-CONNECTION WITH QtPi OR CODE2PLAY)**
+- You will obtain a IP Address (If connection successfull with WiFi) in Serial Monitor on `115200`, copy that IP, DON'T POWER OFF BOTH MOTHERBOARDS.
+
+### RUNNING & TESTING
+
+- Open browser on any device connected to the same network as Motherboards.
+- Put the Master Motherboard's IP in the address bar.
+- You will see some buttons i.e. `OPEN`, `CLOSE`, `CENTER`, `LEFT`, `RIGHT`
+
+
+  YOU ARE GOOD TO GO!
+  ENJOY YOUR OWN SHARLEY, GO INTO THE CODE FOR CUSTOMIZATIONS!
